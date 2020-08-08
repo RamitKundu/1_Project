@@ -1,0 +1,28 @@
+package co.in.Quotes.Config;
+
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+
+@Configuration
+@EnableWebMvc
+@ComponentScan(basePackages="co.in")
+public class WebConfig extends WebMvcConfigurerAdapter{
+	//============testing==============
+	@Bean
+	public ViewResolver viewResolver() {
+
+	        InternalResourceViewResolver irvr = new InternalResourceViewResolver();
+
+	        irvr.setPrefix("/WEB-INF/views/"); //your "greeting.jsp" file should be here
+	        irvr.setSuffix(".jsp");
+	        irvr.setExposeContextBeansAsAttributes(true);
+	        return irvr;
+
+	    }
+
+}

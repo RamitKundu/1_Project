@@ -1,0 +1,6 @@
+package co.in.Quotes.Config;
+
+
+public class WebConfig {
+
+}

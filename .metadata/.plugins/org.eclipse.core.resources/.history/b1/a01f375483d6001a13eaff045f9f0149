@@ -1,0 +1,5 @@
+package co.in.Quotes.Dao;
+
+public interface UserInfoDao {
+
+}
