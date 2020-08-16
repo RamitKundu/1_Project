@@ -15,7 +15,7 @@ import org.springframework.orm.hibernate5.LocalSessionFactoryBuilder;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
 
-
+@Configuration
 @EnableTransactionManagement
 @ComponentScan("co.in.QuotesDB")
 public class ApplicationContext {
@@ -24,18 +24,20 @@ public class ApplicationContext {
 		
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
 
-		dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
-		dataSource.setUrl("jdbc:oracle:thin:@localhost:1521/XE");
+		//dataSource.setDriverClassName("oracle.jdbc.driver.OracleDriver");
+		//dataSource.setUrl("jdbc:oracle:thin:@localhost:1521/XE");
+		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/quotes");
 
-		dataSource.setUsername("QUOTES"); // Schema name
-		dataSource.setPassword("***");
+		dataSource.setUsername("RAMIT"); // Schema name
+		dataSource.setPassword("root");
 		return dataSource;
 	}
 	
 	private Properties getHibernateProperties(){
 
 		Properties connectionProperties = new Properties();
-		connectionProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.Oracle10gDialect");
+		connectionProperties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQLDialect");//org.hibernate.dialect.Oracle10gDialect
 		connectionProperties.setProperty("hibernate.hbm2ddl.auto", "update");
 		
 		return connectionProperties;

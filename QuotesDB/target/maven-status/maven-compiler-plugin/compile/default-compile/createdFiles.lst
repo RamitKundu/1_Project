@@ -1,3 +1,4 @@
 co\in\Quotes\Dao\UserInfoDao.class
 co\in\Quotes\DaoImpl\UserInfoDaoImpl.class
+co\in\Quotes\ContextConfig\ApplicationContext.class
 co\in\Quotes\Model\UserInfo.class
